@@ -25,6 +25,13 @@ class Suggest:
         for k in d:
             result +=  self.trans[k] + "––" + str(d[k]) + "\r\n"
         return result
+
+    def getButtons(self) :
+        return {
+            "title": "Ваш матрас",
+            "url": "https://www.ikea.com/ru/ru/catalog/products/50369335/",
+            "hide": True
+        }
     
     def getNextStep(self):
         return Suggest()
