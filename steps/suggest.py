@@ -10,7 +10,7 @@ class Suggest:
         return self.dictionary
 
     def saveAnswer(self, userSession, userMessage):
-        userSession['answers']['intro'] = userMessage
+        return
 
     def getResult (self, userSession) :
         result = ""
@@ -18,3 +18,6 @@ class Suggest:
         for k in d:
             result +=  k + " " + d[k] + "\r\n"
         return result
+    
+    def getNextStep(self):
+        return Suggest()
