@@ -22,7 +22,8 @@ class Intro:
     def getText (self) :
         messageIndex = random.randint(0,3)
         helloIndex = random.randint(0,1)
-        return self.hello[helloIndex] + ", " + self.dictionary[messageIndex]
+        questionIndex = random.randint(0,1)
+        return self.hello[helloIndex] + ", " + self.dictionary[messageIndex] + self.question[questionIndex]
 
     def saveAnswer(self, userSession, userMessage):
         userSession['answers']['size'] = userMessage
