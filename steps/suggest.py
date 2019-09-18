@@ -16,7 +16,7 @@ class Suggest:
         result = "Ваши предпочтения:\r\n"
         d = userSession['answers']
         for k in d:
-            result +=  k + " " + d[k] + "\r\n"
+            result +=  k + " " + str(d[k]) + "\r\n"
         return result
     
     def getNextStep(self):
