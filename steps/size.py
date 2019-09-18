@@ -33,10 +33,13 @@ class Size:
     def saveAnswer(self, userSession, userMessage):
         entities = userMessage['nlu']['entities']
         width = 0
+        isNum = False
         for k in entities :
             if k['type'] == "YANDEX.NUMBER":
-                width = k['value']
-                userSession['answers']['intro'] = width
+                if not isNum :
+                    width = k['value']
+                    isNum = True
+        userSession['answers']['size'] = width
         if width == 0 :
             self.nextStep = Size()
         
