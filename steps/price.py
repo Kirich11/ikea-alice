@@ -12,7 +12,7 @@ class Price:
         return self.dictionary[0]
 
     def saveAnswer(self, userSession, userMessage):
-        userSession['answers']['price'] = userMessage
+        userSession['answers']['price'] = userMessage['original_utterance']
 
     def getNextStep (self) :
         return Suggest()

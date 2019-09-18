@@ -12,7 +12,7 @@ class Temperature:
         return self.dictionary[0]
 
     def saveAnswer(self, userSession, userMessage):
-        userSession['answers']['temperature'] = userMessage
+        userSession['answers']['temperature'] = userMessage['original_utterance']
 
     def getNextStep (self) :        
         return Price()

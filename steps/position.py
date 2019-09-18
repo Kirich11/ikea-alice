@@ -17,7 +17,7 @@ class Position:
         return self.dictionary[index]
 
     def saveAnswer(self, userSession, userMessage):
-        userSession['answers']['position'] = userMessage
+        userSession['answers']['position'] = userMessage['original_utterance']
 
     def getNextStep (self) :
         return Temperature()
