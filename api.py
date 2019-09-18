@@ -68,12 +68,11 @@ def handle_dialog(req, res):
     step = factory.getStep(sessionStorage[user_id]['last_question'])
     userMessage = req['request']['original_utterance'].lower()
     step.saveAnswer(sessionStorage[user_id], userMessage)
-    nextStep = step.getNextStep()
-
-    sessionStorage[user_id]['last_question'] = nextStep.getName()
-    if nextStep.getName() == 'suggest':
-        step = factory.getStep('suggest')
+    
+    if step.getName() == 'suggest':
         res['response']['text'] = step.getResult(sessionStorage[user_id])
         return
     
+    nextStep = step.getNextStep()
+    sessionStorage[user_id]['last_question'] = nextStep.getName()
     res['response']['text'] = nextStep.getText()
