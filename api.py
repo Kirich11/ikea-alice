@@ -70,10 +70,10 @@ def handle_dialog(req, res):
     step.saveAnswer(sessionStorage[user_id], userMessage)
     nextStep = step.getNextStep()
 
+    sessionStorage[user_id]['last_question'] = nextStep.getName()
     if nextStep.getName() == 'suggest':
         step = factory.getStep('suggest')
         res['response']['text'] = step.getResult(sessionStorage[user_id])
         return
     
-    sessionStorage[user_id]['last_question'] = nextStep.getName()
     res['response']['text'] = nextStep.getText()
