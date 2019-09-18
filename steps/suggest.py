@@ -14,7 +14,7 @@ class Suggest:
 
     def getResult (self, userSession) :
         result = ""
-        d = userSession['answer']
+        d = userSession['answers']
         for k in d:
             result +=  d + " " + d[k] + "\r\n"
         return result
