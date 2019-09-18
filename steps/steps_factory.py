@@ -1,4 +1,4 @@
-from .intro import Intro
+from .size import Size
 from .position import Position
 from .price import Price
 from .temperature import Temperature
@@ -8,7 +8,7 @@ from .hardness import Hardness
 class StepsFactory:
     def getStep(self, classname) :
         return {
-            'intro': Intro(),
+            'size': Size(),
             'hardness': Hardness(),
             'position': Position(),
             'price': Price(),

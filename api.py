@@ -51,7 +51,7 @@ def handle_dialog(req, res):
         # Это новый пользователь.
         # Инициализируем сессию и поприветствуем его.
         
-        step = factory.getStep('intro')
+        step = factory.getStep('size')
 
         sessionStorage[user_id] = {
             'answers': {},
@@ -66,7 +66,7 @@ def handle_dialog(req, res):
     # Обрабатываем ответ пользователя.
 
     step = factory.getStep(sessionStorage[user_id]['last_question'])
-    userMessage = req['request']['original_utterance'].lower()
+    userMessage = req['request']
     step.saveAnswer(sessionStorage[user_id], userMessage)
     nextStep = step.getNextStep()
 
@@ -75,4 +75,4 @@ def handle_dialog(req, res):
         res['response']['text'] = nextStep.getResult(sessionStorage[user_id])
         return
     
-    res['response']['text'] = nextStep.getText()
+    res['response']['text'] = nextStep.getText(sessionStorage[user_id]['answers'][nextStep.getName()])
