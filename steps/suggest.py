@@ -13,7 +13,7 @@ class Suggest:
         return
 
     def getResult (self, userSession) :
-        result = ""
+        result = "Ваши предпочтения:\r\n"
         d = userSession['answers']
         for k in d:
             result +=  k + " " + d[k] + "\r\n"
