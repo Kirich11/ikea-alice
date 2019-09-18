@@ -2,7 +2,7 @@ from .suggest import Suggest
 
 class Price:
     def __init__ (self) :
-        self.dictionary = ['Можете указать свой бюджет?']
+        self.dictionary = ['Укажите свой бюджет.']
         self.name = 'price'
 
     def getName (self) :

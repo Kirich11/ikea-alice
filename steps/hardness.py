@@ -2,7 +2,7 @@ from .position import Position
 
 class Hardness():
     def __init__ (self) :
-        self.dictionary = ['Какой жесткости матрас вам нужен']
+        self.dictionary = ['Вам нужен жесткий или средний матрас?']
         self.name = 'hardness'
 
     def getName (self) :
