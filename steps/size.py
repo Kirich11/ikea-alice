@@ -14,7 +14,7 @@ class Size:
             'Какой ширины матрас нужен вам?'
         ]
         self.hello = ['Хорошо', 'Привет']
-        self.name = 'intro'
+        self.name = 'size'
         self.nextStep = Hardness()
 
     def getName (self) :
