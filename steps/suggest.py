@@ -27,11 +27,11 @@ class Suggest:
         return result
 
     def getButtons(self) :
-        return {
+        return [{
             "title": "Ваш матрас",
             "url": "https://www.ikea.com/ru/ru/catalog/products/50369335/",
             "hide": True
-        }
+        }]
     
     def getNextStep(self):
         return Suggest()
