@@ -73,7 +73,7 @@ def handle_dialog(req, res):
     sessionStorage[user_id]['last_question'] = nextStep.getName()
     if nextStep.getName() == 'suggest':
         res['response']['text'] = nextStep.getResult(sessionStorage[user_id])
-        res['response']['buttons'] = nextStep.getButtons
+        res['response']['buttons'] = nextStep.getButtons()
         return
     stepName = nextStep.getName()
     if stepName in sessionStorage[user_id]['answers']:
