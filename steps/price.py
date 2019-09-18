@@ -9,7 +9,7 @@ class Price:
         return self.name
 
     def getText (self) :
-        return self.dictionary
+        return self.dictionary[0]
 
     def saveAnswer(self, userSession, userMessage):
         userSession['answers']['price'] = userMessage
