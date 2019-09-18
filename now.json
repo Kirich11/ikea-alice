@@ -2,7 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.py",
+      "src": "bot/*.py",
+      "use": "@now/python"
+    },
+    {
+      "src": "bot/steps/*.py",
       "use": "@now/python"
     }
   ],
