@@ -2,12 +2,13 @@
   "version": 2,
   "builds": [
     {
-      "src": "bot/*.py",
-      "use": "@now/python"
-    },
-    {
-      "src": "bot/steps/*.py",
-      "use": "@now/python"
+      "src": "*.py",
+      "use": "@now/python",
+      "config": {
+        "includeFiles": [
+          "steps/*.py"
+        ]
+      }
     }
   ],
   "routes": [
