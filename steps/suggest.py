@@ -16,5 +16,5 @@ class Suggest:
         result = ""
         d = userSession['answers']
         for k in d:
-            result +=  d + " " + d[k] + "\r\n"
+            result +=  k + " " + d[k] + "\r\n"
         return result
