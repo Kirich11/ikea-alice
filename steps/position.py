@@ -12,7 +12,7 @@ class Position:
         return self.dictionary
 
     def saveAnswer(self, userSession, userMessage):
-        userSession['answers']['intro'] = userMessage
+        userSession['answers']['position'] = userMessage
 
     def getNextStep (self) :
         return Temperature()

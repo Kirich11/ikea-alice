@@ -12,7 +12,7 @@ class Hardness():
         return self.dictionary[0]
 
     def saveAnswer(self, userSession, userMessage):
-        userSession['answers']['intro'] = userMessage
+        userSession['answers']['hardness'] = userMessage
 
     def getNextStep (self) :        
         return Position()

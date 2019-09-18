@@ -14,7 +14,7 @@ class Intro:
         return self.dictionary[index]
 
     def saveAnswer(self, userSession, userMessage):
-        userSession['answers']['intro'] = userMessage
+        userSession['answers']['size'] = userMessage
 
     def getNextStep (self) :
         return Hardness()
